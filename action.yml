@@ -1,9 +1,17 @@
-name: 'kubectl'
-description: 'The kubectl command line program as a GitHub Action'
+name: kubectl
+description: The kubectl command line program as a GitHub Action
+inputs:
+  kube_config_data:
+    description: Base64 encoded kube config data
+    required: true
+  kubectl_version:
+    description: Exact version of kubectl to use, defaults to latest
+  args:
+    description: Kubectl command arguments to execute
+    required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
 branding:
-  icon: 'terminal'
-  color: 'blue'
-  
+  icon: terminal
+  color: blue
